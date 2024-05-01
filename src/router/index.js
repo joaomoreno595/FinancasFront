@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { EventBus } from '../event-bus';
 
 Vue.use(VueRouter)
 
@@ -11,13 +12,45 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/salario',
+    name: 'Salario',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+      return import(/* webpackChunkName: "salario" */ '../views/SalarioView.vue')
+    }
+  },
+  {
+    path: '/casa',
+    name: 'Casa',
+    component: function () {
+      return import(/* webpackChunkName: "casa" */ '../views/CasaView.vue')
+    }
+  },
+  {
+    path: '/carro',
+    name: 'Carro',
+    component: function () {
+      return import(/* webpackChunkName: "salario" */ '../views/CarroView.vue')
+    }
+  },
+  {
+    path: '/diversos',
+    name: 'Diversos',
+    component: function () {
+      return import(/* webpackChunkName: "diversos" */ '../views/DiversosView.vue')
+    }
+  },
+  {
+    path: '/hitorico',
+    name: 'Historico',
+    component: function () {
+      return import(/* webpackChunkName: "hitorico" */ '../views/HistoricoView.vue')
+    }
+  },
+  {
+    path: '/graficos',
+    name: 'Graficos',
+    component: function () {
+      return import(/* webpackChunkName: "graficos" */ '../views/GraficosView.vue')
     }
   }
 ]
